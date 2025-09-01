@@ -1,0 +1,99 @@
+/* Contact.css */
+.contact {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #fdfcf7, #ececec);
+  text-align: center;
+  font-family: "Georgia", serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #222;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+}
+
+.contact h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #939292;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  margin: 15px 0;
+  color: #333;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.contact a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #444;
+  position: relative;
+}
+
+.contact a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #444;
+  transition: width 0.3s ease;
+  margin-top: 3px;
+}
+
+.contact a:hover::after {
+  width: 100%;
+}
+
+.contact a:hover {
+  color: #000;
+}
+
+/* Fade-in animation */
+.contact p, .contact h2 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s forwards;
+}
+
+.contact h2 {
+  animation-delay: 0.2s;
+}
+.contact p:nth-of-type(1) { animation-delay: 0.4s; }
+.contact p:nth-of-type(2) { animation-delay: 0.6s; }
+.contact p:nth-of-type(3) { animation-delay: 0.8s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle floating background effect */
+.contact::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(200,200,200,0.15) 20%, transparent 70%);
+  animation: floatBg 10s infinite linear;
+}
+
+@keyframes floatBg {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,87 @@
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 100;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hide on scroll */
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+.navbar.active {
+  transform: translateY(0);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #222;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap:30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #ff6347; /* Accent color */
+}
+
+/* Dark mode button fixed on top-right corner */
+.darkmode-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 200;
+  transition: transform 0.2s;
+}
+
+.darkmode-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Dark Mode Theme */
+body.dark-mode {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode .navbar {
+  background: #1e1e1ecc;
+  box-shadow: 0 2px 6px rgba(255,255,255,0.1);
+}
+
+body.dark-mode .nav-links a {
+  color: #f1f1f1;
+}
+
+body.dark-mode .nav-links a:hover {
+  color: #ff9800;
+}
+
+body.dark-mode .logo {
+  color: #f1f1f1;
+}
